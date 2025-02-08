@@ -12,6 +12,11 @@ interface SlideProps {
   children: React.ReactNode;
 }
 
+interface ContentBoxProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
 const Slide: React.FC<SlideProps> = ({ title, children }) => (
   <Card className="w-full h-full bg-card shadow-lg border-border relative backdrop-blur-sm">
     <CardHeader className="text-center pb-4">
@@ -26,7 +31,7 @@ const Slide: React.FC<SlideProps> = ({ title, children }) => (
   </Card>
 );
 
-const ContentBox = ({ children, className = "" }) => (
+const ContentBox = ({ children, className = "" }: ContentBoxProps) => (
   <div className={`p-4 bg-card/40 rounded-lg border border-border/50 shadow-sm backdrop-blur-md transition-all duration-200 hover:bg-card/60 ${className}`}>
     {children}
   </div>
